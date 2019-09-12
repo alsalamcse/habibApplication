@@ -20,10 +20,10 @@ public class AddTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task2);
 
-        etTitle=(EditText)(findViewById(R.id.etTitle));
-        etSubject=(EditText)(findViewById(R.id.etSubject));
-        skbrImportant=(SeekBar)(findViewById(R.id.skbrImportant));
-        btnSave=(Button)(findViewById(R.id.btnSave));
-        tvPrioroty=(TextView)(findViewById(R.id.tvPriority));
+        etTitle=(findViewById(R.id.etTitle));
+        etSubject=(findViewById(R.id.etSubject));
+        skbrImportant=(findViewById(R.id.skbrImportant));
+        btnSave=(findViewById(R.id.btnSave));
+        tvPrioroty=(findViewById(R.id.tvPriority));
     }
 }

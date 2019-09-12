@@ -18,11 +18,11 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-      ImView=(ImageView)(findViewById(R.id.ImView));
-       etEmail=(EditText)(findViewById(R.id.etEmail));
-       etPassword=(EditText)(findViewById(R.id.etPassword));
-       btSignIn=(Button)(findViewById(R.id.btSignIn));
-       btSignUp=(Button)(findViewById(R.id.btSignUp));
+      ImView=(findViewById(R.id.ImView));
+       etEmail=(findViewById(R.id.etEmail));
+       etPassword=(findViewById(R.id.etPassword));
+       btSignIn=(findViewById(R.id.btSignIn));
+       btSignUp=(findViewById(R.id.btSignUp));
 
     }
 }

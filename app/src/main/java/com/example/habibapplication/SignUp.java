@@ -18,5 +18,11 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up2);
 
+        etFirstName=(findViewById(R.id.etFirstName));
+        etLastName=(findViewById(R.id.etLastName));
+        etPhone=(findViewById(R.id.etPhone));
+        etEmail=(findViewById(R.id.etEmail));
+        etPassword=(findViewById(R.id.etPassword));
+
     }
 }
