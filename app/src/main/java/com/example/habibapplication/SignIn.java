@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SignIn extends AppCompatActivity {
     private ImageView ImView;
@@ -24,5 +27,63 @@ public class SignIn extends AppCompatActivity {
        btSignIn=(findViewById(R.id.btSignIn));
        btSignUp=(findViewById(R.id.btSignUp));
 
+
+
+
+
+        btSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               dataHandler();
+            }
+        });
+
+
+
+    }
+    private void dataHandler()
+    {
+        String email=etEmail.getText().toString();
+        String passw=etPassword.getText().toString();
+        boolean isok=true;
+
+//        if (email.length()<4)
+//        {
+//            etEmail.setError("Email length error");
+//            isok=false;
+//        }
+//        if (email.indexOf("@")<0 || email.indexOf(".")<0)
+//        {
+//            etEmail.setError("email wrong format");
+//            isok=false;
+//        }
+   if (isValidEmailAddress(email)==false)
+   {
+       etEmail.setError("Invalid Email");
+       isok=false;
+   }
+   if (passw.length()<8)
+   {
+       etPassword.setError("min length 8");
+       isok=false;
+   }
+   if (isok)
+   {
+
+   }
+
+    }
+    public boolean isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
+
+    private void signIn(String email, String passw)
+    {
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        auth.signInWithEmailAndPassword(email,passw);
     }
 }
+
