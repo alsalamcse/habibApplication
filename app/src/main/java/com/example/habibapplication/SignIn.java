@@ -3,6 +3,7 @@ package com.example.habibapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -92,7 +93,9 @@ public class SignIn extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                if (task.isSuccessful())
                {
-                   //todo go to ,main screen(all task activity(
+                   //todo go to ,main screen(all task activity)
+                   Intent i=new Intent(getApplication(),TempAllTaskActivity.class);
+                   startActivity(i);
 
                }
                else

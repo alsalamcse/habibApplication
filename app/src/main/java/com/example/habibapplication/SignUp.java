@@ -3,6 +3,7 @@ package com.example.habibapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class SignUp extends AppCompatActivity {
@@ -11,6 +12,8 @@ public class SignUp extends AppCompatActivity {
     private EditText etPhone;
     private EditText etEmail;
     private EditText etPassword;
+    private EditText etReeter;
+    private Button save;
 
 
     @Override
@@ -23,6 +26,15 @@ public class SignUp extends AppCompatActivity {
         etPhone=(findViewById(R.id.etPhone));
         etEmail=(findViewById(R.id.etEmail));
         etPassword=(findViewById(R.id.etPassword));
+        etReeter=(findViewById(R.id.etReeterPassword));
+        save=(findViewById(R.id.btSave));
 
+    }
+
+    private void datahandler()
+    {
+        String email=etEmail.getText().toString();
+        String passw=etPassword.getText().toString();
+        boolean isok=true;
     }
 }
