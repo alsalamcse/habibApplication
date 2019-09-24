@@ -1,5 +1,6 @@
 package com.example.habibapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.Image;
@@ -9,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignIn extends AppCompatActivity {
@@ -69,7 +73,7 @@ public class SignIn extends AppCompatActivity {
    }
    if (isok)
    {
-
+    signIn(email,passw);
    }
 
     }
@@ -83,7 +87,20 @@ public class SignIn extends AppCompatActivity {
     private void signIn(String email, String passw)
     {
         FirebaseAuth auth=FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(email,passw);
+        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+               if (task.isSuccessful())
+               {
+                   //todo go to ,main screen(all task activity(
+
+               }
+               else
+               {
+                   etEmail.setError("email or password ia wrong");
+               }
+            }
+        });
     }
 }
 
