@@ -53,8 +53,9 @@ public class AddTask extends AppCompatActivity {
         {
             etSubject.setError("subject lengh error");
         }
-        if (isok){
-            createTask(title,seecbar,subject);
+        if (isok)
+        {
+            createTask(title,subject,seecbar);
         }
 
 
