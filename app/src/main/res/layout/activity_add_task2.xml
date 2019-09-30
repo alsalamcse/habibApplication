@@ -36,10 +36,10 @@
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="218dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginLeft="74dp"
+        android:layout_width="166dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
         android:layout_marginBottom="203dp"
         android:text="save"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,8 +48,8 @@
 
     <TextView
         android:id="@+id/tvPriority"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="94dp"
+        android:layout_height="37dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginEnd="33dp"

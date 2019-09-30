@@ -22,7 +22,8 @@ public class SignIn extends AppCompatActivity {
     private Button btSignIn,btSignUp;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
@@ -57,21 +58,21 @@ public class SignIn extends AppCompatActivity {
         String passw=etPassword.getText().toString();
         boolean isok=true;
 
-//        if (email.length()<4)
-//        {
-//            etEmail.setError("Email length error");
-//            isok=false;
-//        }
-//        if (email.indexOf("@")<0 || email.indexOf(".")<0)
-//        {
-//            etEmail.setError("email wrong format");
-//            isok=false;
-//        }
-   if (isValidEmailAddress(email)==false)
-   {
-       etEmail.setError("Invalid Email");
-       isok=false;
-   }
+        if (email.length()<4)
+        {
+            etEmail.setError("Email length error");
+            isok=false;
+        }
+       if (email.indexOf("@")<0 || email.indexOf(".")<0)
+       {
+           etEmail.setError("email wrong format");
+           isok=false;
+       }
+ //  if (isValidEmailAddress(email)==false)
+  // {
+      // etEmail.setError("Invalid Email");
+      // isok=false;
+  // }
    if (passw.length()<8)
    {
        etPassword.setError("min length 8");

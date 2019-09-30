@@ -3,6 +3,7 @@ package com.example.habibapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -25,5 +26,40 @@ public class AddTask extends AppCompatActivity {
         skbrImportant=(findViewById(R.id.skbrImportant));
         btnSave=(findViewById(R.id.btnSave));
         tvPrioroty=(findViewById(R.id.tvPriority));
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                dataHandler();
+
+            }
+        });
+    }
+
+    private void dataHandler()
+    {
+        String title= etTitle.getText().toString();
+        String subject=etSubject.getText().toString();
+        int seecbar=skbrImportant.getProgress();
+        boolean isok=true;
+
+        if (title.length()<1)
+        {
+            etTitle.setError("title lengh error");
+            isok=false;
+        }
+        if (subject.length()<1)
+        {
+            etSubject.setError("subject lengh error");
+        }
+        if (isok){
+            createTask(title,seecbar,subject);
+        }
+
+
+    }
+    private void createTask(String title,String subject,int seecbar){
+
     }
 }
