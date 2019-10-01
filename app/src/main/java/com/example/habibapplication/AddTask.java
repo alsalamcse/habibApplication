@@ -9,6 +9,10 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.habibapplication.data.MyTask;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class AddTask extends AppCompatActivity {
     private EditText etTitle,etSubject;
     private SeekBar skbrImportant;
@@ -55,12 +59,26 @@ public class AddTask extends AppCompatActivity {
         }
         if (isok)
         {
+            MyTask t=new MyTask();
+            t.setTitle(title);
+            creatMyTask(t);
             createTask(title,subject,seecbar);
         }
 
 
     }
-    private void createTask(String title,String subject,int seecbar){
+
+    private void creatMyTask(MyTask t)
+    {
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference();
+        String key = reference.child("tasks").push().getKey();
+        reference.child("tasks").child(key).setValue(t);
+
+    }
+
+    private void createTask(String title,String subject,int seecbar)
+    {
 
     }
 }
