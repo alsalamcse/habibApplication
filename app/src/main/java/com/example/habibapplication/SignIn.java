@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -100,12 +101,15 @@ public class SignIn extends AppCompatActivity {
                if (task.isSuccessful())
                {
                    //todo go to ,main screen(all task activity)
+                   Toast.makeText(SignIn.this, "successful", Toast.LENGTH_SHORT).show();
                    Intent intent=new Intent(SignIn.this,MainTasksActivity.class);
                    startActivity(intent);
 
                }
                else
                {
+                   Toast.makeText(SignIn.this, "not successful"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
                    etEmail.setError("email or password ia wrong");
                }
             }
