@@ -5,12 +5,22 @@ public class MyTask
     private String key;
     private String title;
     private String subject;
+    private String owner;
     private int important;
 
     public MyTask()
     {
         //jghdgd
 
+    }
+
+    public String getOwner()
+    {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public String getKey() {
