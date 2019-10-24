@@ -60,6 +60,7 @@ public class AddTask extends AppCompatActivity {
         }
         if (subject.length()<1)
         {
+
             etSubject.setError("subject lengh error");
         }
         if (isok)
